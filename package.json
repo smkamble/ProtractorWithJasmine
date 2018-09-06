@@ -1,0 +1,30 @@
+{
+  "name": "protractor-with-typescript-framework",
+  "version": "1.0.0",
+  "description": "ProtractorWithTypescriptFramework",
+  "main": "conf.js",
+  "author": {
+    "name": "Sachin"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "pretest": "npm run tsc",
+    "test": "npm run pretest && webdriver-manager update && protractor conf.js"
+    
+  },
+  "dependencies": {
+    "protractor": "^5.4.0",
+    "typescript": "^2.1.5"
+  },
+  "keywords": [
+    "Protractor",
+    "Typescript"
+  ],
+  "devDependencies": {
+    "@types/jasmine": "^2.8.8",
+    "@types/jasminewd2": "^2.0.3",
+    "@types/node": "^6.0.62",
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  }
+}
