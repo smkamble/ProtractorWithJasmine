@@ -4,7 +4,7 @@
   "description": "ProtractorWithTypescriptFramework",
   "main": "conf.js",
   "author": {
-    "name": "Sachin"
+    "name": "Sachin <skamblem@gmail.com>"
   },
   "scripts": {
     "tsc": "tsc",
