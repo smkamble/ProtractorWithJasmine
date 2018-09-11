@@ -4,8 +4,8 @@ import { browser, element, by, protractor, $,$$, ElementFinder} from 'protractor
 export class BasePage{
     
     //Elements defineds
-          quickStart:ElementFinder=element(by.id('drop1'));
-         tutorial:ElementFinder=element(by.linkText('Tutorial'));
+        quickStart:ElementFinder=element(by.id('drop1'));
+        tutorial:ElementFinder=element(by.linkText('Tutorial'));
     
 
     //Open Browser
