@@ -1,6 +1,7 @@
 import { browser, element, by} from 'protractor'
 import { TutorialPage } from '../pages/TutorialPage';
 import { BasePage } from '../pages/BasePage';
+
 describe('Tutorial Page', function() {
     //Globally
     var basePage =new BasePage();
