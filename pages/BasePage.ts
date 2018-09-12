@@ -3,7 +3,7 @@ import { browser, element, by, protractor, $,$$, ElementFinder} from 'protractor
 
 export class BasePage{
     
-    //Elements defineds
+    //Elements defined
         quickStart:ElementFinder=element(by.id('drop1'));
         tutorial:ElementFinder=element(by.linkText('Tutorial'));
     
@@ -18,8 +18,4 @@ export class BasePage{
         this.quickStart.click();
         this.tutorial.click();
     }
-    
-    
-
-
 }
