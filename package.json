@@ -11,11 +11,11 @@
     "tsc:w": "tsc -w",
     "pretest": "npm run tsc",
     "test": "npm run pretest && webdriver-manager update && protractor conf.js"
-    
   },
   "dependencies": {
     "protractor": "^5.4.0",
-    "typescript": "^2.1.5"
+    "typescript": "^2.1.5",
+    "winston": "^3.1.0"
   },
   "keywords": [
     "Protractor",

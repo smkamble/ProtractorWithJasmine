@@ -1,6 +1,7 @@
 import { browser, element, by} from 'protractor'
 import { TutorialPage } from '../pages/TutorialPage';
 import { BasePage } from '../pages/BasePage';
+import { logger } from "../util/logger";
 
 describe('Tutorial Page', function() {
     //Globally
@@ -10,7 +11,7 @@ describe('Tutorial Page', function() {
 	it('Title verifications of Tutorial Page', function() {
        // basePage.NavigateToTutorialPage();
         tutorialPage.VerifyTutoraialPageTitle().then(function (title) {
-        console.log("The title of Tutorial Page is : "+title);
+        logger.info("The title of Tutorial Page is : "+title);
         expect(title).toBe("Protractor - end-to-end testing for AngularJS");
       });
 	});

@@ -1,21 +1,22 @@
 import { browser, element, by, protractor, $,$$, ElementFinder} from 'protractor';
-
+import {logger} from '../util/logger';
 
 export class BasePage{
     
     //Elements defined
-        quickStart:ElementFinder=element(by.id('drop1'));
-        tutorial:ElementFinder=element(by.linkText('Tutorial'));
+        public homeLink:ElementFinder=element(by.linkText('Home'));
+        private quickStartDropDown:ElementFinder=element(by.id('drop1'));
+        private tutorialLink:ElementFinder=element(by.linkText('Tutorial'));
     
 
     //Open Browser
     OpenBrowser(url:string){
         browser.get(url);
-        
     }
     //Navigate to Tutorials Page
     NavigateToTutorialPage(){
-        this.quickStart.click();
-        this.tutorial.click();
+        this.quickStartDropDown.click();
+        logger.info("1 *** infomational");       
+        this.tutorialLink.click();
     }
 }
