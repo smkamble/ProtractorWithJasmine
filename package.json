@@ -28,6 +28,7 @@
     "@types/node": "^7.0.0",
     "protractor-jasmine2-html-reporter": "0.0.7",
     "protractor-element-extend": "^2.0.1",
-    "jasmine-protractor-matchers": "^1.0.1"
+    "jasmine-protractor-matchers": "^1.0.1",
+    "jasmine-spec-reporter": "^4.2.1"
   }
 }
