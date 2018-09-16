@@ -7,11 +7,13 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Debug protractor.conf.js",
+            "preLaunchTask": "tsc",
             "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
             "args": [
                 "${workspaceFolder}/conf.js"
-            ]
+            ],
+            "outFiles": []
         }
     ]
 }
