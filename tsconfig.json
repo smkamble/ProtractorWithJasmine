@@ -6,9 +6,10 @@
 	  "inlineSourceMap": true,
 	  "declaration": false,
 	  "noImplicitAny": false,
-	  "outDir": "JSFiles"
+	  "outDir": "JSFiles",
+	 "sourceMap": true
 	},
 	"exclude": [
-	  "node_modules"
+	  "node_modules/"
 	]
 }
