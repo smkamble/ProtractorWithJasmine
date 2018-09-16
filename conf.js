@@ -112,5 +112,18 @@ exports.config = {
           //inlineImages: true
         })
         );
-     }
+     },
+    // Specifying global beforeEach and afterEach jasmine2 hooks.
+    beforeEach(() => {
+      // Adding .toAppear() and .toDisappear() into available matchers.
+      // https://github.com/Xotabu4/jasmine-protractor-matchers
+      let matchers = require('jasmine-protractor-matchers')
+      jasmine.addMatchers(matchers);
+    });
+
+    afterEach(() => {
+      // Clearing browser data after each test
+       browser.manage().deleteAllCookies();
+       browser.executeScript('window.sessionStorage.clear(); window.localStorage.clear();')
+    });
   }
