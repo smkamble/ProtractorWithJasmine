@@ -7,7 +7,6 @@
 	  "declaration": false,
 	  "noImplicitAny": false,
 	  "outDir": "JSFiles",
-	 "sourceMap": true
 	},
 	"exclude": [
 	  "node_modules/"

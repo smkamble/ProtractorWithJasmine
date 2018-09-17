@@ -1,5 +1,5 @@
-
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
+let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 exports.config = {
     // launch locally when fields directConnect and seleniumAddress are not provided
     // for testing directly against a browser without using a Selenium Server. applies only to chrome and firefox.
@@ -12,6 +12,8 @@ exports.config = {
     // Spec patterns are relative to the current working directly when
     // protractor is called.
     specs: ['JSFiles/specs/*.js'],
+
+    
     
   // Capabilities to be passed to the webdriver instance.
     capabilities: {
@@ -36,13 +38,11 @@ exports.config = {
       */
 
      /*
-
       // allows different specs to run in parallel.
       // If this is set to be true, specs will be sharded by file
       // (i.e. all files to be run by this set of capabilities will run in parallel).
       // Default is false.
       shardTestFiles: true,
-
       // Maximum number of browser instances that can run in parallel for this
       // set of capabilities. This is only needed if shardTestFiles is true.
       // Default is 1.
@@ -85,7 +85,6 @@ exports.config = {
     regression: 'tests/e2e/regression/*.js',
     full: 'tests/e2e/*.js'
     },
-
     //Run the smoke test and performance test suites:
     //protractor conf.js --suite smoke, performance
     */
@@ -112,18 +111,24 @@ exports.config = {
           //inlineImages: true
         })
         );
+        //jasmine-spec-reporter for console 
+        jasmine.getEnv().addReporter(new SpecReporter({
+          spec: {
+            displayStacktrace: true
+          }
+        }));
      },
     // Specifying global beforeEach and afterEach jasmine2 hooks.
-    beforeEach(() => {
+    beforeEach:function() {
       // Adding .toAppear() and .toDisappear() into available matchers.
       // https://github.com/Xotabu4/jasmine-protractor-matchers
       let matchers = require('jasmine-protractor-matchers')
       jasmine.addMatchers(matchers);
-    });
+    },
 
-    afterEach(() => {
+    afterEach:function() {
       // Clearing browser data after each test
        browser.manage().deleteAllCookies();
        browser.executeScript('window.sessionStorage.clear(); window.localStorage.clear();')
-    });
+    }
   }
