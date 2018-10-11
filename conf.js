@@ -1,6 +1,5 @@
-var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
-let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-exports.config = {
+
+exports.config= {
     // launch locally when fields directConnect and seleniumAddress are not provided
     // for testing directly against a browser without using a Selenium Server. applies only to chrome and firefox.
     directConnect:true,
@@ -103,20 +102,17 @@ exports.config = {
        // set implicit time to 5 seconds
        //browser.manage().timeouts().implicitlyWait(5000);
 
-       //protractor-jasmine2-html-reporter
-       jasmine.getEnv().addReporter(
-        new Jasmine2HtmlReporter({
-          savePath: 'target/screenshots',
-          screenshotsFolder: 'images',
-          //inlineImages: true
-        })
-        );
-        //jasmine-spec-reporter for console 
-        jasmine.getEnv().addReporter(new SpecReporter({
-          spec: {
-            displayStacktrace: true
-          }
-        }));
+       //Jasmine Report 
+       var ChercherTechJasmineReporter = require('chercher-tech-jasmine-reporter');
+
+	      jasmine.getEnv().addReporter(new ChercherTechJasmineReporter({
+		    screenshotOnFail :true,
+		    reportName:'Execution Report',
+		    showSkipped:true,
+		    browser:browser,
+		    showLineChart:true
+
+	      }));
      },
     // Specifying global beforeEach and afterEach jasmine2 hooks.
     beforeEach:function() {

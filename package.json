@@ -14,6 +14,7 @@
     "test": "protractor conf.js"
   },
   "dependencies": {
+    "chercher-tech-jasmine-reporter": "0.0.7",
     "protractor": "latest",
     "protractor-html-reporter-2": "^1.0.4",
     "typescript": "^2.2.2",
