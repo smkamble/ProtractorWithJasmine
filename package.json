@@ -6,10 +6,9 @@
   "author": {
     "name": "Sachin <skamblem@gmail.com>"
   },
-  "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "pretest": "npm run tsc",
+    "preinstall": "npm cache clear",
     "postinstall": "webdriver-manager update && tsc",
     "test": "protractor conf.js"
   },
